@@ -3,8 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdullah Zeshan — Portfolio</title>
-<meta name="description" content="Abdullah Zeshan — Sales Executive, Social Media Marketer & Computer Science student.">
+<title>Abdullah Zeshan | Sales Executive & Social Media Marketer in Karachi</title>
+<meta name="description" content="Abdullah Zeshan is a Sales Executive and Social Media Marketer based in Karachi, Pakistan, specializing in LinkedIn outreach, paid ads, and brand growth.">
+<link rel="canonical" href="https://abdullah-zeshan.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Abdullah Zeshan | Sales Executive & Social Media Marketer">
+<meta property="og:description" content="Sales Executive and Social Media Marketer based in Karachi, Pakistan. LinkedIn outreach, paid ads, and brand growth.">
+<meta property="og:url" content="https://abdullah-zeshan.github.io/">
+<meta property="og:image" content="https://abdullah-zeshan.github.io/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Abdullah Zeshan | Sales Executive & Social Media Marketer">
+<meta name="twitter:description" content="Sales Executive and Social Media Marketer based in Karachi, Pakistan. LinkedIn outreach, paid ads, and brand growth.">
+<meta name="twitter:image" content="https://abdullah-zeshan.github.io/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abdullah Zeshan",
+  "url": "https://abdullah-zeshan.github.io/",
+  "jobTitle": "Sales Executive & Social Media Marketer",
+  "address": { "@type": "PostalAddress", "addressLocality": "Karachi", "addressCountry": "PK" },
+  "email": "mailto:abdullahzeshan532@gmail.com",
+  "sameAs": ["https://www.linkedin.com/in/abdullah-zeshan-4706a02a3"]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -51,17 +77,73 @@
   .orb.o1{ width: 420px; height: 420px; background: var(--indigo); top: -160px; left: -100px; }
   .orb.o2{ width: 360px; height: 360px; background: var(--amber); bottom: -180px; right: -100px; opacity: 0.25; }
 
-  /* ---------- header ---------- */
-  header{ position: sticky; top: 0; z-index: 20; background: rgba(245,246,250,0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-  header .wrap{ display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; }
-  .logo{ font-family: var(--ff-display); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.01em; color: var(--ink); }
-  nav{ display: flex; align-items: center; gap: 30px; }
-  nav ul{ list-style: none; display: flex; gap: 28px; }
-  nav a.nav-link{ text-decoration: none; font-size: 0.92rem; font-weight: 500; opacity: 0.75; position: relative; padding-bottom: 4px; }
-  nav a.nav-link::after{ content:''; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--indigo), var(--amber)); transition: width 0.3s ease; }
-  nav a.nav-link:hover{ opacity: 1; }
-  nav a.nav-link:hover::after{ width: 100%; }
+  /* ---------- header (pill, dark) ---------- */
+  header{ position: sticky; top: 18px; z-index: 30; }
+  .header-pill{
+    width: fit-content; max-width: 92vw; margin: 0 auto; background: var(--ink); border-radius: 999px;
+    display: flex; align-items: center; gap: 34px;
+    padding: 9px 9px 9px 20px; box-shadow: 0 14px 34px -12px rgba(20,20,28,0.35);
+    position: relative;
+  }
+  .logo{ font-family: var(--ff-display); font-weight: 700; font-size: 0.92rem; color: #fff; letter-spacing: 0.01em; white-space: nowrap; }
+  .kebab-btn{
+    width: 34px; height: 34px; border-radius: 50%; background: var(--bg); border: none;
+    display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+  .kebab-btn:hover{ background: #fff; }
+  .kebab-btn span{ font-size: 1.2rem; color: var(--ink); font-weight: 700; letter-spacing: 1px; }
+  .kebab-btn.open{ transform: rotate(90deg); }
 
+  .nav-panel{
+    position: absolute; top: calc(100% + 10px); right: 0; background: var(--ink); border-radius: 20px;
+    padding: 20px; width: 230px; box-shadow: 0 20px 50px -12px rgba(20,20,28,0.4);
+    opacity: 0; visibility: hidden; transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index: 40;
+  }
+  .nav-panel.open{ opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-panel-head{ display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .nav-panel-head span{ font-family: var(--ff-display); font-weight: 700; color: #fff; font-size: 1rem; }
+  .nav-panel-close{
+    width: 30px; height: 30px; border-radius: 50%; background: #fff; border: none; cursor: pointer;
+    font-size: 0.95rem; color: var(--ink); display: flex; align-items: center; justify-content: center;
+  }
+  .nav-panel-links{ display: flex; flex-direction: column; gap: 10px; }
+  .nav-panel-links a{
+    display: block; background: var(--bg); color: var(--ink); text-decoration: none;
+    padding: 12px 16px; border-radius: 14px; font-weight: 600; font-size: 0.92rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .nav-panel-links a:hover{ background: #fff; transform: translateX(4px); }
+
+  /* ---------- floating side actions ---------- */
+  .side-actions{
+    position: fixed; right: 22px; bottom: 26px; z-index: 35;
+    display: flex; flex-direction: column; gap: 10px; align-items: flex-end;
+  }
+  .side-btn{
+    background: var(--ink); color: #fff; border: none; padding: 12px 20px; border-radius: 999px;
+    font-size: 0.86rem; font-weight: 600; cursor: pointer; text-decoration: none;
+    box-shadow: 0 10px 26px -10px rgba(20,20,28,0.5);
+    transition: transform 0.2s ease, background 0.2s ease;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .side-btn:hover{ transform: translateY(-3px); background: var(--indigo); }
+  .side-star{
+    width: 20px; height: 20px; margin-bottom: 4px; align-self: flex-end;
+    background: linear-gradient(135deg, var(--indigo), var(--amber));
+    clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+    animation: spin 7s linear infinite;
+  }
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+
+  @media (max-width: 720px){
+    .side-actions{ right: 14px; bottom: 16px; }
+    .side-btn{ padding: 10px 16px; font-size: 0.8rem; }
+  }
+
+  /* ---------- buttons (general) ---------- */
   .btn{
     position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 8px;
     padding: 12px 24px; border-radius: 999px; font-size: 0.92rem; font-weight: 600;
@@ -80,15 +162,20 @@
   }
 
   /* ---------- hero ---------- */
-  .hero{ position: relative; padding: 120px 0 100px; overflow: hidden; }
+  .hero{ position: relative; padding: 90px 0 100px; overflow: hidden; }
   .hero .eyebrow{
-    font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
-    color: var(--amber); margin-bottom: 22px; display: inline-block;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase;
+    color: var(--indigo); margin-bottom: 24px; display: inline-flex; align-items: center; gap: 8px;
+    background: var(--indigo-soft); padding: 8px 16px 8px 12px; border-radius: 999px;
     opacity: 0; animation: fadeUp 0.7s ease forwards; animation-delay: 0.05s;
+  }
+  .hero .eyebrow::before{
+    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--indigo), var(--amber)); flex-shrink: 0;
   }
   .hero h1{
     font-family: var(--ff-display); font-weight: 700; font-size: clamp(2.3rem, 5.6vw, 3.8rem);
-    line-height: 1.15; max-width: 16ch; color: var(--ink);
+    line-height: 1.15; max-width: 17ch; color: var(--ink);
     opacity: 0; animation: fadeUp 0.7s ease forwards; animation-delay: 0.15s;
   }
   .hero h1 .grad{
@@ -98,7 +185,7 @@
   }
   @keyframes shine{ to{ background-position: 200% center; } }
   .hero p.lede{
-    margin-top: 24px; max-width: 54ch; font-size: 1.08rem; color: var(--muted);
+    margin-top: 24px; max-width: 58ch; font-size: 1.08rem; color: var(--muted);
     opacity: 0; animation: fadeUp 0.7s ease forwards; animation-delay: 0.28s;
   }
   .hero .actions{
@@ -168,60 +255,78 @@
   .card .sub{ font-size: 0.92rem; color: var(--muted); margin-top: 4px; }
   .card p{ margin-top: 12px; color: var(--muted); font-size: 0.95rem; }
 
-  footer{ padding: 40px 0 60px; font-size: 0.85rem; color: var(--muted); text-align: center; }
-  footer .foot-link{ color: var(--indigo); font-weight: 600; text-decoration: none; }
-  footer .foot-link:hover{ text-decoration: underline; }
+  /* ---------- let's talk (contact section) ---------- */
+  .talk-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  .talk-title{ font-family: var(--ff-display); font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 700; }
+  .talk-sub{ margin-top: 14px; color: var(--muted); font-size: 1.02rem; max-width: 40ch; }
+  .talk-form{ background: var(--ink); border-radius: 20px; padding: 30px; }
+  .talk-field{ margin-bottom: 18px; }
+  .talk-field:last-of-type{ margin-bottom: 0; }
+  .talk-field label{ display: block; color: #fff; font-size: 0.86rem; font-weight: 600; margin-bottom: 8px; }
+  .talk-field input, .talk-field textarea{
+    width: 100%; background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 12px;
+    padding: 12px 14px; color: #fff; font-family: var(--ff-body); font-size: 0.94rem; outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .talk-field input::placeholder, .talk-field textarea::placeholder{ color: rgba(255,255,255,0.4); }
+  .talk-field input:focus, .talk-field textarea:focus{ border-color: var(--amber); }
+  .talk-field textarea{ min-height: 110px; resize: vertical; }
+  .talk-submit{
+    width: 100%; margin-top: 22px; background: var(--bg); color: var(--ink); border: none;
+    padding: 14px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .talk-submit:hover{ background: #fff; transform: translateY(-2px); }
+  @media (max-width: 720px){ .talk-grid{ grid-template-columns: 1fr; } }
 
-  /* ---------- contact modal ---------- */
-  .modal-backdrop{
-    position: fixed; inset: 0; background: rgba(20,20,28,0.5); backdrop-filter: blur(4px);
-    z-index: 50; display: flex; align-items: center; justify-content: center;
-    opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
-    padding: 20px;
+  /* ---------- footer (black, watermark) ---------- */
+  footer{
+    background: var(--ink); color: #fff; padding: 70px 0 30px; position: relative; overflow: hidden;
+    border-top: none;
   }
-  .modal-backdrop.open{ opacity: 1; pointer-events: auto; }
-  .modal{
-    background: var(--surface); border-radius: 20px; padding: 36px 32px; max-width: 400px; width: 100%;
-    transform: scale(0.9) translateY(10px); transition: transform 0.3s cubic-bezier(.2,.8,.2,1);
-    box-shadow: 0 40px 80px -20px rgba(20,20,28,0.35);
-    position: relative;
+  .footer-top{ display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: 40px; position: relative; z-index: 2; }
+  .footer-links{ display: flex; flex-direction: column; gap: 12px; }
+  .footer-links a{ text-decoration: none; color: #fff; font-weight: 600; font-size: 0.95rem; opacity: 0.85; transition: opacity 0.2s ease; }
+  .footer-links a:hover{ opacity: 1; }
+  .footer-contact-label{ font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.55; margin-bottom: 10px; }
+  .footer-email{ color: #fff; text-decoration: none; font-weight: 600; }
+  .footer-watermark{
+    font-family: var(--ff-display); font-weight: 800; font-size: clamp(3.2rem, 16vw, 11rem);
+    color: rgba(255,255,255,0.06); letter-spacing: -0.02em; white-space: nowrap;
+    line-height: 1; user-select: none; position: relative; z-index: 1; text-align: center;
   }
-  .modal-backdrop.open .modal{ transform: scale(1) translateY(0); }
-  .modal-close{
-    position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; border-radius: 50%;
-    border: none; background: var(--indigo-soft); color: var(--indigo); font-size: 1.1rem; cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease;
+  .footer-bottom{
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    margin-top: 30px; position: relative; z-index: 2;
   }
-  .modal-close:hover{ transform: rotate(90deg); background: var(--indigo); color: #fff; }
-  .modal h3{ font-family: var(--ff-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 6px; }
-  .modal .sub{ color: var(--muted); font-size: 0.92rem; margin-bottom: 24px; }
-  .contact-row{
-    display: flex; align-items: center; gap: 14px; padding: 14px 0; border-top: 1px solid var(--line);
-    text-decoration: none; color: var(--ink); font-family: var(--ff-display); font-weight: 600; font-size: 1rem;
-    transition: transform 0.2s ease, color 0.2s ease;
+  .footer-icons{ display: flex; gap: 10px; }
+  .footer-icon{
+    width: 38px; height: 38px; border-radius: 10px; background: rgba(255,255,255,0.08);
+    display: flex; align-items: center; justify-content: center; text-decoration: none; color: #fff;
+    font-size: 0.95rem; font-weight: 700; transition: background 0.2s ease;
   }
-  .contact-row:first-of-type{ border-top: none; }
-  .contact-row .icon{
-    width: 38px; height: 38px; border-radius: 10px; background: var(--indigo-soft); color: var(--indigo);
-    display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;
-  }
-  .contact-row:hover{ transform: translateX(6px); color: var(--indigo); }
+  .footer-icon:hover{ background: rgba(255,255,255,0.18); }
+  .footer-copy{ font-size: 0.85rem; opacity: 0.6; }
+  .footer-tag{ font-size: 0.78rem; opacity: 0.5; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* ---------- contact modal removed; kept utility classes below unused ---------- */
 
   @media (prefers-reduced-motion: reduce){
     .swipe-left, .swipe-right, .swipe-up{ opacity: 1; transform: none; transition: none; }
-    .card, .modal, .modal-backdrop{ transition: none !important; }
+    .card{ transition: none !important; }
     .marquee-track{ animation: none; }
     .hero *{ animation: none !important; opacity: 1 !important; }
+    .side-star{ animation: none; }
     html{ scroll-behavior: auto; }
   }
 
   a:focus-visible, button:focus-visible{ outline: 2px solid var(--indigo); outline-offset: 3px; }
 
   @media (max-width: 720px){
-    nav ul{ display: none; }
-    .hero{ padding: 90px 0 70px; }
+    .hero{ padding: 70px 0 60px; }
     .about-grid{ grid-template-columns: 1fr; }
     .tl-entry{ grid-template-columns: 1fr; gap: 6px; }
+    .footer-top{ flex-direction: column; }
   }
 </style>
 </head>
@@ -230,15 +335,22 @@
 <div class="progress" id="progressBar"></div>
 
 <header>
-  <div class="wrap">
+  <div class="header-pill">
     <span class="logo">Abdullah Zeshan</span>
-    <nav>
-      <ul>
-        <li><a class="nav-link" href="#about">About</a></li>
-        <li><a class="nav-link" href="#experience">Experience</a></li>
-        <li><a class="nav-link" href="#education">Education</a></li>
-      </ul>
-      <button class="btn primary" id="openContactTop"><span class="pulse-dot"></span>Get in Touch</button>
+    <button class="kebab-btn" id="kebabBtn" aria-label="Open menu"><span>•••</span></button>
+
+    <nav class="nav-panel" id="navPanel">
+      <div class="nav-panel-head">
+        <span>Menu</span>
+        <button class="nav-panel-close" id="navPanelClose" aria-label="Close menu">✕</button>
+      </div>
+      <div class="nav-panel-links">
+        <a href="#about" class="nav-link-item">About Me</a>
+        <a href="#experience" class="nav-link-item">Experience</a>
+        <a href="#education" class="nav-link-item">Education</a>
+        <a href="#projects" class="nav-link-item">Projects</a>
+        <a href="#talk" class="nav-link-item">Contact</a>
+      </div>
     </nav>
   </div>
 </header>
@@ -249,11 +361,11 @@
     <div class="orb o2" id="orb2"></div>
   </div>
   <div class="wrap">
-    <span class="eyebrow">Sales · Marketing · Code — in that order, most days</span>
-    <h1>Abdullah turns attention into <span class="grad">action</span>.</h1>
-    <p class="lede">By day I close deals as a Sales Executive at Tech Cuber. By night (and most of the day too, honestly) I'm running campaigns for TVA International and TVA – The Virtual Advertisers, and teaching myself to code. Karachi-based, always shipping something.</p>
+    <span class="eyebrow">Deals by day, content by night, code on the side</span>
+    <h1>Abdullah Zeshan turns attention into <span class="grad">action</span>.</h1>
+    <p class="lede">Hey, I'm Abdullah, a sales and social media specialist helping brands turn attention into real, paying customers. I work on both sides at once: closing deals directly with clients, and building the content, ad campaigns, and social strategy that bring those clients in the first place. My focus is making growth feel structured and repeatable, not random, so founders and teams get a steady flow of interest instead of one off spikes.</p>
     <div class="actions">
-      <button class="btn primary" id="openContactHero"><span class="pulse-dot"></span>Get in Touch</button>
+      <a class="btn primary" href="#talk"><span class="pulse-dot"></span>Let's Talk</a>
       <a class="btn ghost" href="#experience">See my experience</a>
     </div>
   </div>
@@ -266,19 +378,19 @@
     </div>
     <div class="about-grid">
       <div class="swipe-left">
-        <p>It started with a simple question: why do some posts stop the scroll and most don't? Chasing that answer turned into a real habit — testing hooks, studying what makes people comment instead of just double-tapping, and slowly turning "I think this works" into "I can prove this works."</p>
-        <p>These days that habit pays the bills two different ways. As a Sales Executive at Tech Cuber, I read what a client actually needs and close the gap between "interested" and "signed." As a marketer for TVA International and TVA – The Virtual Advertisers, I do the same thing for entire brands — content, strategy, campaigns, the whole loop.</p>
-        <p>The Computer Science degree is the long game. I want to stop being the person who <em>asks</em> a developer for a landing page and start being the person who just builds it.</p>
+        <p>It started with a simple question: why do some posts stop the scroll and most don't? Chasing that answer turned into a real habit, testing hooks, studying what makes people comment instead of just double tapping, and slowly turning "I think this works" into "I can prove this works."</p>
+        <p>That habit paid off two different ways. As a Sales Executive at Tech Cuber, I read what a client actually needed and closed the gap between "interested" and "signed." As a marketer for The Virtual Advertisers and The Virtual Academy, I did the same thing for entire brands: content, strategy, campaigns, the whole loop.</p>
+        <p>The Computer Science background is the long game. I'm now pursuing a Generative AI diploma at NED Academy, because I want to stop being the person who asks a developer for a landing page and start being the person who just builds it.</p>
       </div>
       <dl class="facts swipe-right">
         <dt>Based in</dt>
         <dd>Karachi, Pakistan</dd>
-        <dt>Current role</dt>
-        <dd>Sales Executive, Tech Cuber</dd>
+        <dt>Status</dt>
+        <dd>Open to new opportunities</dd>
         <dt>Marketing since</dt>
         <dd>2024</dd>
         <dt>Studying</dt>
-        <dd>Intermediate, Computer Science</dd>
+        <dd>Generative AI Diploma, NED Academy</dd>
       </dl>
     </div>
   </div>
@@ -300,6 +412,7 @@
       <span class="skill-pill">Paid Advertising</span>
       <span class="skill-pill">Performance Optimization</span>
       <span class="skill-pill">Facebook &amp; Instagram Ads</span>
+      <span class="skill-pill">LinkedIn Outreach</span>
       <span class="skill-pill">Brand Strategy</span>
       <span class="skill-pill">Data Analysis</span>
       <span class="skill-pill">Teaching</span>
@@ -312,6 +425,7 @@
       <span class="skill-pill">Paid Advertising</span>
       <span class="skill-pill">Performance Optimization</span>
       <span class="skill-pill">Facebook &amp; Instagram Ads</span>
+      <span class="skill-pill">LinkedIn Outreach</span>
       <span class="skill-pill">Brand Strategy</span>
       <span class="skill-pill">Data Analysis</span>
       <span class="skill-pill">Teaching</span>
@@ -326,55 +440,20 @@
       <h2>Experience</h2>
     </div>
     <div class="timeline">
-      <div class="tl-entry swipe-left">
-        <div>
-          <div class="when">Jun 2026 – Present</div>
-          <span class="badge">Full-time</span>
-        </div>
-        <div>
-          <h3>Sales Executive</h3>
-          <div class="company">Tech Cuber · Karachi</div>
-          <p>Hunting down business opportunities and turning cold leads into real relationships. I own the full conversation — from the first "hi, got a minute?" to the signed deal — and make sure the client actually gets what they came for.</p>
-        </div>
-      </div>
-
-      <div class="tl-entry swipe-right">
-        <div>
-          <div class="when">Oct 2024 – Present</div>
-          <span class="badge">Full-time</span>
-        </div>
-        <div>
-          <h3>Social Media Marketing Manager</h3>
-          <div class="company">The Virtual Advertisers (TVA) · Karachi</div>
-          <p>I plan the strategy, write the copy, launch the ads, then dig into the numbers to see what actually landed — and do it better the next time. This is where I turned "posting content" into a repeatable system.</p>
-        </div>
-      </div>
 
       <div class="tl-entry swipe-left">
         <div>
-          <div class="when">Aug 2024 – Oct 2024</div>
-          <span class="badge">Internship</span>
-        </div>
-        <div>
-          <h3>Social Media Marketer</h3>
-          <div class="company">TVA – The Virtual Advertisers</div>
-          <p>My first real seat at the table. Learned the difference between a post that looks nice and a post that actually performs, and started figuring out which audience responds to what.</p>
-        </div>
-      </div>
-
-      <div class="tl-entry swipe-right">
-        <div>
-          <div class="when">Jul 2024 – Present</div>
+          <div class="when">Jun 2024 – Jul 2026</div>
           <span class="badge">Full-time</span>
         </div>
         <div>
           <h3>Social Media Manager</h3>
           <div class="company">The Virtual Academy International</div>
-          <p>Built the academy's online presence up from the ground — content that actually speaks to prospective students, not just their parents. Enrollment numbers followed.</p>
+          <p>Built the academy's online presence up from the ground, content that actually speaks to prospective students, not just their parents. Enrollment numbers followed.</p>
         </div>
       </div>
 
-      <div class="tl-entry swipe-left">
+      <div class="tl-entry swipe-right">
         <div>
           <div class="when">Jul 2024 – Oct 2024</div>
           <span class="badge">Internship</span>
@@ -382,23 +461,47 @@
         <div>
           <h3>Social Media Marketer</h3>
           <div class="company">TVA International</div>
-          <p>Started here — figuring out what makes a homeschooling brand feel human online instead of just corporate. Helped build a student community that actually talks to each other, not just to us.</p>
+          <p>Started here, figuring out what makes a homeschooling brand feel human online instead of just corporate. Helped build a student community that actually talks to each other, not just to us.</p>
+        </div>
+      </div>
+
+      <div class="tl-entry swipe-left">
+        <div>
+          <div class="when">Oct 2024 – Jul 2026</div>
+          <span class="badge">Full-time</span>
+        </div>
+        <div>
+          <h3>Social Media Marketing Manager</h3>
+          <div class="company">The Virtual Advertisers (TVA) · Karachi</div>
+          <p>I plan the strategy, write the copy, launch the ads, then dig into the numbers to see what actually landed, and do it better the next time. This is where I turned "posting content" into a repeatable system.</p>
         </div>
       </div>
 
       <div class="tl-entry swipe-right">
         <div>
-          <div class="when">Sep 2024 – Present</div>
+          <div class="when">Aug 2024 – Oct 2024</div>
+          <span class="badge">Internship</span>
+        </div>
+        <div>
+          <h3>Social Media Marketer</h3>
+          <div class="company">The Virtual Advertisers (TVA)</div>
+          <p>My first real seat at the table. Learned the difference between a post that looks nice and a post that actually performs, and started figuring out which audience responds to what.</p>
+        </div>
+      </div>
+
+      <div class="tl-entry swipe-left">
+        <div>
+          <div class="when">Sep 2024 – Jul 2026</div>
           <span class="badge">Full-time</span>
         </div>
         <div>
           <h3>Social Media Manager</h3>
           <div class="company">The Virtual Academy Pakistan (TVA Homeschooling)</div>
-          <p>Ran the entire digital presence for Pakistan's first structured homeschooling platform, solo — content, ads, visuals, copy, leads, and the reporting to prove it was working. A one-person marketing department, basically.</p>
+          <p>Ran the entire digital presence for Pakistan's first structured homeschooling platform, solo: content, ads, visuals, copy, leads, and the reporting to prove it was working. A one person marketing department, basically.</p>
         </div>
       </div>
 
-      <div class="tl-entry swipe-left">
+      <div class="tl-entry swipe-right">
         <div>
           <div class="when">Sep 2025 – Jun 2026</div>
           <span class="badge">Part-time</span>
@@ -409,6 +512,19 @@
           <p>Turns out explaining a concept clearly enough for a classroom is the same skill as explaining a brand clearly enough for an ad. Taught CS, borrowed the patience for everything else.</p>
         </div>
       </div>
+
+      <div class="tl-entry swipe-left">
+        <div>
+          <div class="when">Jun 2026 – Aug 2026</div>
+          <span class="badge">Full-time</span>
+        </div>
+        <div>
+          <h3>Sales Executive</h3>
+          <div class="company">Tech Cuber · Karachi</div>
+          <p>Hunted down business opportunities and turned cold leads into real relationships. Owned the full conversation, from the first "hi, got a minute?" to the signed deal, and made sure the client actually got what they came for.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -420,10 +536,16 @@
     </div>
     <div class="card-grid">
       <div class="card swipe-up tilt">
+        <div class="when">Aug 2026 – Aug 2027</div>
+        <h3>NED University of Engineering and Technology</h3>
+        <div class="sub">Undergraduate Diploma, Generative AI (NED Academy)</div>
+        <p>A 1 year diploma covering the core concepts of AI and machine learning with a focus on generative models, including deep learning, natural language processing, and practical applications of large language models.</p>
+      </div>
+      <div class="card swipe-up tilt">
         <div class="when">Jan 2024 – Jun 2026</div>
         <h3>Gulshan Degree College</h3>
         <div class="sub">Intermediate, Computer Science · Grade A</div>
-        <p>Split my time between coursework, the football pitch, and public speaking events — turns out arguing a point on stage isn't that different from pitching a campaign.</p>
+        <p>Split my time between coursework, the football pitch, and public speaking events, turns out arguing a point on stage isn't that different from pitching a campaign.</p>
       </div>
       <div class="card swipe-up tilt">
         <div class="when">Mar 2019 – Mar 2024</div>
@@ -442,36 +564,70 @@
     </div>
     <div class="card-grid">
       <div class="card swipe-up tilt">
-        <div class="when">Aug 2024 – Present</div>
+        <div class="when">Aug 2024 – Jul 2026</div>
         <h3>TVA – The Virtual Academy</h3>
         <div class="sub">Pakistan's First Homeschooling Platform</div>
-        <p>Homeschooling is a hard sell to skeptical parents. My job was closing that trust gap — content and campaigns that made a screen feel like a real classroom, nationwide.</p>
+        <p>Homeschooling is a hard sell to skeptical parents. My job was closing that trust gap, content and campaigns that made a screen feel like a real classroom, nationwide.</p>
       </div>
     </div>
   </div>
 </section>
 
+<section id="talk">
+  <div class="wrap">
+    <div class="talk-grid">
+      <div class="swipe-left">
+        <div class="talk-title">Let's talk.</div>
+        <p class="talk-sub">Have a project or need help? Fill out the form and I'll get back to you soon.</p>
+      </div>
+      <form class="talk-form swipe-right" id="talkForm">
+        <div class="talk-field">
+          <label for="talkName">Name</label>
+          <input type="text" id="talkName" placeholder="Enter your name" required>
+        </div>
+        <div class="talk-field">
+          <label for="talkEmail">Email</label>
+          <input type="email" id="talkEmail" placeholder="Enter your email" required>
+        </div>
+        <div class="talk-field">
+          <label for="talkProject">Your Project</label>
+          <textarea id="talkProject" placeholder="Tell me about your project"></textarea>
+        </div>
+        <button type="submit" class="talk-submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 <footer>
-  Want to talk? <a class="foot-link" href="#" id="openContactFooter">Get in touch →</a>
-  <br><br>
-  © 2026 Abdullah Zeshan.
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-links">
+        <a href="#about">About Me</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#talk">Contact</a>
+      </div>
+      <div>
+        <div class="footer-contact-label">Contact</div>
+        <a class="footer-email" href="mailto:abdullahzeshan532@gmail.com">abdullahzeshan532@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-watermark">ABDULLAH</div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Abdullah Zeshan.</div>
+      <div class="footer-icons">
+        <a class="footer-icon" href="mailto:abdullahzeshan532@gmail.com" aria-label="Email">✉</a>
+      </div>
+      <div class="footer-tag">/Sales &amp; Social Growth</div>
+    </div>
+  </div>
 </footer>
 
-<div class="modal-backdrop" id="modalBackdrop">
-  <div class="modal">
-    <button class="modal-close" id="modalClose">✕</button>
-    <h3>Let's connect</h3>
-    <p class="sub">Reach out through any of these — I usually reply fast.</p>
-    <a class="contact-row" href="mailto:abdullahzeshan532@gmail.com">
-      <span class="icon">✉</span> abdullahzeshan532@gmail.com
-    </a>
-    <a class="contact-row" href="tel:03048286219">
-      <span class="icon">☎</span> 0304 8286219
-    </a>
-    <a class="contact-row" href="https://www.linkedin.com/in/abdullah-zeshan-4706a02a3" target="_blank" rel="noopener">
-      <span class="icon">in</span> LinkedIn Profile
-    </a>
-  </div>
+<div class="side-actions">
+  <div class="side-star"></div>
+  <a href="#talk" class="side-btn">Let's Talk</a>
+  <a href="https://www.linkedin.com/in/abdullah-zeshan-4706a02a3" target="_blank" rel="noopener" class="side-btn">View LinkedIn</a>
 </div>
 
 <script>
@@ -527,29 +683,43 @@
     });
   }
 
-  // Contact modal
-  const modalBackdrop = document.getElementById('modalBackdrop');
-  const openButtons = [
-    document.getElementById('openContactTop'),
-    document.getElementById('openContactHero'),
-    document.getElementById('openContactFooter')
-  ];
-  const closeModalBtn = document.getElementById('modalClose');
+  // Kebab dropdown menu
+  const kebabBtn = document.getElementById('kebabBtn');
+  const navPanel = document.getElementById('navPanel');
+  const navPanelClose = document.getElementById('navPanelClose');
 
-  function openModal(e){
-    if(e) e.preventDefault();
-    modalBackdrop.classList.add('open');
+  function toggleNav(){
+    kebabBtn.classList.toggle('open');
+    navPanel.classList.toggle('open');
   }
-  function closeModal(){
-    modalBackdrop.classList.remove('open');
+  function closeNav(){
+    kebabBtn.classList.remove('open');
+    navPanel.classList.remove('open');
   }
-  openButtons.forEach(btn => btn && btn.addEventListener('click', openModal));
-  closeModalBtn.addEventListener('click', closeModal);
-  modalBackdrop.addEventListener('click', (e) => {
-    if(e.target === modalBackdrop) closeModal();
+  kebabBtn.addEventListener('click', toggleNav);
+  navPanelClose.addEventListener('click', closeNav);
+  document.querySelectorAll('.nav-link-item').forEach(link => {
+    link.addEventListener('click', closeNav);
+  });
+  document.addEventListener('click', (e) => {
+    if(!navPanel.contains(e.target) && !kebabBtn.contains(e.target)){
+      closeNav();
+    }
   });
   document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape') closeModal();
+    if(e.key === 'Escape') closeNav();
+  });
+
+  // Let's Talk form -> opens prefilled email
+  const talkForm = document.getElementById('talkForm');
+  talkForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('talkName').value;
+    const email = document.getElementById('talkEmail').value;
+    const project = document.getElementById('talkProject').value;
+    const subject = encodeURIComponent(`Project inquiry from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nProject details:\n${project}`);
+    window.location.href = `mailto:abdullahzeshan532@gmail.com?subject=${subject}&body=${body}`;
   });
 </script>
 
