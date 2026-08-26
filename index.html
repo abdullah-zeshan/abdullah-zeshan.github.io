@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdullah Zeshan | Sales Executive & Social Media Marketer in Karachi</title>
+<title>Abdullah Zeshan | Sales & Social Media Marketer, Karachi</title>
 <meta name="description" content="Abdullah Zeshan is a Sales Executive and Social Media Marketer based in Karachi, Pakistan, specializing in LinkedIn outreach, paid ads, and brand growth.">
 <link rel="canonical" href="https://abdullah-zeshan.github.io/">
 
@@ -14,6 +14,15 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RPDXLL7HPY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RPDXLL7HPY');
+</script>
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Abdullah Zeshan">
@@ -275,6 +284,7 @@
   section{ padding: 90px 0; border-top: 1px solid var(--line); position: relative; }
   .section-head{ margin-bottom: 44px; }
   .section-head h2{ font-family: var(--ff-display); font-size: 1.9rem; font-weight: 700; }
+  .section-sub{ color: var(--muted); font-size: 0.98rem; margin-top: 10px; max-width: 52ch; }
 
   .swipe-left{ opacity: 0; transform: translateX(-36px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.8,.2,1); }
   .swipe-right{ opacity: 0; transform: translateX(36px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.8,.2,1); }
@@ -382,7 +392,8 @@
   .footer-links a{ text-decoration: none; color: #fff; font-weight: 600; font-size: 0.95rem; opacity: 0.85; transition: opacity 0.2s ease; }
   .footer-links a:hover{ opacity: 1; }
   .footer-contact-label{ font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.55; margin-bottom: 10px; }
-  .footer-email{ color: #fff; text-decoration: none; font-weight: 600; }
+  .footer-email{ color: #fff; text-decoration: none; font-weight: 600; display: block; }
+  .footer-phone{ color: rgba(255,255,255,0.65); font-size: 0.86rem; margin-top: 8px; }
   .footer-watermark{
     font-family: var(--ff-display); font-weight: 800; font-size: clamp(3.2rem, 16vw, 11rem);
     color: rgba(255,255,255,0.06); letter-spacing: -0.02em; white-space: nowrap;
@@ -457,8 +468,8 @@
     <a class="contact-row" href="https://wa.me/923112001268" target="_blank" rel="noopener">
       <span class="c-icon">💬</span> WhatsApp Me
     </a>
-    <a class="contact-row" href="mailto:abdullahzeshan532@gmail.com">
-      <span class="c-icon">✉</span> abdullahzeshan532@gmail.com
+    <a class="contact-row" href="#" id="emailContactLink">
+      <span class="c-icon">✉</span> Email Me
     </a>
   </div>
 </div>
@@ -522,6 +533,7 @@
   <div class="wrap">
     <div class="section-head swipe-up">
       <h2>What I Do</h2>
+      <p class="section-sub">A working list of the sales, marketing, and technical skills I use day to day across client work in Karachi and beyond.</p>
     </div>
   </div>
   <div class="marquee">
@@ -732,15 +744,26 @@
       </div>
       <div>
         <div class="footer-contact-label">Contact</div>
-        <a class="footer-email" href="mailto:abdullahzeshan532@gmail.com">abdullahzeshan532@gmail.com</a>
+        <a class="footer-email" href="#" id="footerEmailLink">Email Me</a>
+        <div class="footer-phone">+92 311 2001268 &middot; Karachi, Pakistan</div>
       </div>
     </div>
     <div class="footer-watermark">ABDULLAH</div>
     <div class="footer-bottom">
       <div class="footer-copy">© 2026 Abdullah Zeshan.</div>
       <div class="footer-icons">
-        <a class="footer-icon" href="https://wa.me/923112001268" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
-        <a class="footer-icon" href="mailto:abdullahzeshan532@gmail.com" aria-label="Email">✉</a>
+        <a class="footer-icon" href="https://wa.me/923112001268" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91S17.5 2 12.04 2Zm5.79 14.15c-.24.68-1.4 1.31-1.93 1.36-.5.05-1.02.24-3.42-.72-2.87-1.16-4.7-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94s.73-2.08.99-2.37c.26-.28.56-.35.75-.35.19 0 .38 0 .54.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.19-.28.37-.23.62-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.35Z"/></svg>
+        </a>
+        <a class="footer-icon" href="#" id="footerEmailIcon" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="footer-icon" href="https://instagram.com/abdullah_zes" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.35" cy="6.65" r="1.15" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="footer-icon" href="https://www.facebook.com/profile.php?id=100082850493658" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.87.24-1.46 1.5-1.46h1.6V4.35C15.87 4.24 15 4.18 14.13 4.18c-2.5 0-4.13 1.5-4.13 4.28V10.4H7.5v3h2.5V21h3.5Z"/></svg>
+        </a>
       </div>
       <div class="footer-tag">/Sales &amp; Social Growth</div>
     </div>
@@ -855,6 +878,15 @@
     const project = document.getElementById('talkProject').value;
     const msg = `Hi Abdullah, I'm ${name} (${email}).\n\n${project}`;
     window.open(`https://wa.me/923112001268?text=${encodeURIComponent(msg)}`, '_blank');
+  });
+
+  // Email obfuscation - assembled at runtime so scrapers can't read it from raw HTML
+  const emailUser = 'abdullahzeshan532';
+  const emailDomain = 'gmail.com';
+  const fullEmail = emailUser + '@' + emailDomain;
+  ['emailContactLink', 'footerEmailLink', 'footerEmailIcon'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.href = 'mailto:' + fullEmail;
   });
 </script>
 

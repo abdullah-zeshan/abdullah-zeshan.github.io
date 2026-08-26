@@ -1,0 +1,17 @@
+# Abdullah Zeshan
+
+> Portfolio site for Abdullah Zeshan, a Sales Executive and Social Media Marketer based in Karachi, Pakistan.
+
+Abdullah Zeshan specializes in LinkedIn outreach, paid advertising, brand growth, and sales pipeline management. He has worked with The Virtual Advertisers (TVA), The Virtual Academy International, and Tech Cuber, and is currently pursuing a Generative AI diploma at NED Academy.
+
+## Key sections
+- About: background in sales and social media marketing
+- Experience: full work history from 2024 to present
+- Education: NED Academy Generative AI diploma, Gulshan Degree College, Usman Public School
+- Featured Project: TVA - The Virtual Academy, Pakistan's first homeschooling platform
+- Contact: WhatsApp and email
+
+## Contact
+- Website: https://abdullah-zeshan.github.io/
+- LinkedIn: https://www.linkedin.com/in/abdullah-zeshan-4706a02a3
+- WhatsApp: +92 311 2001268
