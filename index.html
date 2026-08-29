@@ -86,13 +86,22 @@
   header{position:sticky; top:0; z-index:60; background:rgba(245,243,236,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
   .nav-row{display:flex; justify-content:space-between; align-items:center; padding:20px 28px;}
   .logo{font-family:var(--ff-display); font-weight:700; font-size:0.95rem; text-decoration:none; letter-spacing:-0.01em;}
-  nav.dnav{display:flex; gap:30px; font-family:var(--ff-mono); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em;}
+  nav.dnav{display:flex; align-items:center; gap:30px; font-family:var(--ff-mono); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em;}
   nav.dnav a{text-decoration:none; color:var(--muted); transition:color 0.25s;}
   nav.dnav a:hover{color:var(--ink);}
   @media (max-width:760px){ nav.dnav{display:none;} }
   .nav-cta{font-family:var(--ff-mono); font-size:0.76rem; text-transform:uppercase; letter-spacing:0.04em; padding:10px 18px; border-radius:999px;
     background:var(--ink); color:var(--lime); text-decoration:none; border:none; cursor:pointer; transition:transform 0.3s;}
   .nav-cta:hover{transform:translateY(-2px);}
+
+  .blog-pill{display:inline-flex; align-items:center; gap:8px; background:var(--ink); color:#B7B6AC; border:1px solid var(--ink);
+    padding:8px 15px; border-radius:999px; text-decoration:none; transition:all 0.3s;}
+  .blog-pill svg{width:13px; height:13px; color:var(--lime); flex-shrink:0;}
+  .blog-pill:hover{border-color:var(--lime); color:#fff;}
+  .blog-pill-dark{display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.05); color:#B7B6AC; border:1px solid #2A2C22;
+    padding:8px 15px; border-radius:999px; text-decoration:none; transition:all 0.3s;}
+  .blog-pill-dark svg{width:13px; height:13px; color:var(--lime); flex-shrink:0;}
+  .blog-pill-dark:hover{border-color:var(--lime); color:#fff;}
 
   /* marquee ticker */
   .ticker{background:var(--ink); color:var(--lime); padding:12px 0; overflow:hidden; white-space:nowrap;}
@@ -267,7 +276,10 @@
   .email-copy{background:var(--lime-ink); color:var(--lime); border:none; padding:6px 11px; border-radius:8px; font-family:var(--ff-mono); font-size:0.7rem; cursor:pointer; text-transform:uppercase; flex-shrink:0;}
   @media (max-width:600px){ .email-popup{white-space:normal; max-width:280px;} }
 
-  .talk-form-card{background:rgba(255,255,255,0.03); border:1px solid #2A2C22; border-radius:20px; padding:clamp(24px,4vw,34px);}
+  .talk-form-card{background:rgba(255,255,255,0.03); border:1px solid #2A2C22; border-radius:20px; padding:clamp(24px,4vw,34px);
+    transition:box-shadow 0.4s ease, border-color 0.4s ease;}
+  .talk-form-card.pop{animation:popAttention 0.6s cubic-bezier(.34,1.56,.64,1); border-color:var(--lime); box-shadow:0 0 0 4px rgba(198,255,61,0.15);}
+  @keyframes popAttention{0%{transform:scale(1);} 45%{transform:scale(1.035);} 100%{transform:scale(1);}}
   .field{margin-bottom:20px;}
   .field label{display:block; color:var(--bg); font-family:var(--ff-body); font-weight:600; font-size:0.92rem; margin-bottom:10px;}
   .field input, .field textarea{width:100%; background:rgba(255,255,255,0.04); border:1px solid #3A392F; border-radius:12px;
@@ -308,11 +320,13 @@
   .foot-top{display:flex; justify-content:space-between; gap:30px; flex-wrap:wrap; font-family:var(--ff-mono); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em;}
   .foot-top a{color:#B7B6AC; text-decoration:none; transition:color 0.25s;}
   .foot-top a:hover{color:var(--lime);}
-  .foot-nav{display:flex; gap:24px; flex-wrap:wrap;}
+  .foot-nav{display:flex; align-items:center; gap:24px; flex-wrap:wrap;}
   .mega-name{text-align:center; font-family:var(--ff-display); font-weight:800; font-size:clamp(3rem,13vw,9.5rem); color:#1E2016; letter-spacing:-0.02em; margin:30px 0 10px; line-height:1;}
   .foot-bottom{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; padding-top:22px; border-top:1px solid #2A2C22; font-family:var(--ff-mono); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.04em;}
 
-  .float-pills{position:fixed; right:20px; bottom:22px; z-index:70; display:flex; flex-direction:column; gap:10px; align-items:flex-end;}
+  .float-pills{position:fixed; right:20px; bottom:22px; z-index:70; display:flex; flex-direction:column; gap:10px; align-items:flex-end;
+    transition:opacity 0.35s ease, transform 0.35s ease;}
+  .float-pills.hide{opacity:0; transform:translateY(10px); pointer-events:none;}
   .pill-btn{background:var(--ink); color:var(--lime); border:none; padding:13px 22px; border-radius:999px; font-family:var(--ff-mono); font-weight:600; font-size:0.8rem;
     text-transform:uppercase; letter-spacing:0.04em; text-decoration:none; cursor:pointer; box-shadow:0 14px 30px -12px rgba(20,18,14,0.5); display:inline-flex; align-items:center; gap:8px; transition:transform 0.3s;}
   .pill-btn:hover{transform:translateY(-3px);}
@@ -328,13 +342,13 @@
   <div class="nav-row">
     <a href="#top" class="logo">Abdullah Zeshan</a>
     <nav class="dnav" aria-label="Primary">
-      <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="/blog/sales-and-social-media-marketing-one-job/">Blog</a>
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="/blog/sales-and-social-media-marketing-one-job/" class="blog-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Blog</a>
     </nav>
   </div>
   <div class="ticker">
     <div class="ticker-track">
-      <span>Open to new opportunities</span><span>Karachi, Pakistan</span><span>Sales &amp; Social Growth</span><span>Currently: Tech Cuber</span>
-      <span>Open to new opportunities</span><span>Karachi, Pakistan</span><span>Sales &amp; Social Growth</span><span>Currently: Tech Cuber</span>
+      <span>Open to new opportunities</span><span>Karachi, Pakistan</span><span>Sales &amp; Social Growth</span>
+      <span>Open to new opportunities</span><span>Karachi, Pakistan</span><span>Sales &amp; Social Growth</span>
     </div>
   </div>
 </header>
@@ -523,7 +537,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-nav">
-        <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="/blog/sales-and-social-media-marketing-one-job/">Blog</a><a href="#talk">Contact</a>
+        <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="/blog/sales-and-social-media-marketing-one-job/" class="blog-pill-dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Blog</a><a href="#talk">Contact</a>
       </div>
       <div>+92 311 2001268 · Karachi, Pakistan</div>
     </div>
@@ -617,7 +631,26 @@
     if(lastFocused) lastFocused.focus();
   }
   document.getElementById('heroTalk').addEventListener('click', openModal);
-  document.getElementById('pillTalk').addEventListener('click', openModal);
+  document.getElementById('pillTalk').addEventListener('click', function(){
+    var talkSection = document.getElementById('talk');
+    var formCard = document.querySelector('.talk-form-card');
+    talkSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function(){
+      formCard.classList.remove('pop');
+      void formCard.offsetWidth; // restart the animation if clicked again
+      formCard.classList.add('pop');
+    }, 500);
+  });
+
+  // hide the floating pills while the contact section is already on screen,
+  // so they don't sit on top of the form
+  var floatPills = document.querySelector('.float-pills');
+  var talkSectionEl = document.getElementById('talk');
+  if(floatPills && talkSectionEl){
+    new IntersectionObserver(function(entries){
+      floatPills.classList.toggle('hide', entries[0].isIntersecting);
+    }, { threshold: 0.25 }).observe(talkSectionEl);
+  }
   document.getElementById('modalClose').addEventListener('click', closeModal);
   modalBg.addEventListener('click', function(e){ if(e.target === modalBg) closeModal(); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
