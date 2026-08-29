@@ -243,7 +243,42 @@
     color:#B7B6AC; text-decoration:none; transition:all 0.3s;}
   .talk-icon:hover{background:var(--lime); border-color:var(--lime); color:var(--lime-ink);}
   .talk-icon svg{width:17px; height:17px;}
-  .talk-email{font-family:var(--ff-mono); font-size:0.95rem; color:var(--lime); text-decoration:none;}
+
+  .talk-grid{display:grid; grid-template-columns:0.95fr 1.05fr; gap:50px; margin-top:44px; align-items:start;}
+  @media (max-width:860px){ .talk-grid{grid-template-columns:1fr;} }
+
+  .contact-chips{display:flex; gap:12px; flex-wrap:wrap; margin-top:30px;}
+  .chip-item{display:inline-flex; align-items:center; gap:9px; font-family:var(--ff-mono); font-size:0.8rem; color:#B7B6AC;
+    background:rgba(255,255,255,0.05); border:1px solid #2A2C22; padding:11px 17px; border-radius:999px;}
+  .chip-item svg{width:14px; height:14px; color:var(--lime); flex-shrink:0;}
+
+  .email-reveal-wrap{position:relative; display:inline-block; margin-top:28px;}
+  .email-btn{font-family:var(--ff-mono); font-size:0.82rem; text-transform:uppercase; letter-spacing:0.04em; background:transparent;
+    border:1px solid #3A392F; color:var(--bg); padding:13px 24px; border-radius:999px; cursor:pointer; transition:all 0.3s; display:inline-flex; align-items:center; gap:8px;}
+  .email-btn:hover{border-color:var(--lime); color:var(--lime);}
+  .email-popup{
+    position:absolute; left:0; top:calc(100% + 12px); background:var(--lime); color:var(--lime-ink); padding:14px 18px; border-radius:14px;
+    display:flex; align-items:center; gap:12px; font-family:var(--ff-mono); font-size:0.82rem; font-weight:600;
+    opacity:0; transform:scale(0.85) translateY(-6px); pointer-events:none; transition:opacity 0.3s cubic-bezier(.2,.8,.2,1), transform 0.3s cubic-bezier(.2,.8,.2,1);
+    box-shadow:0 16px 34px -14px rgba(0,0,0,0.5); z-index:5; white-space:nowrap;
+  }
+  .email-popup.show{opacity:1; transform:scale(1) translateY(0); pointer-events:auto; animation:popBounce 0.45s cubic-bezier(.34,1.56,.64,1);}
+  @keyframes popBounce{0%{transform:scale(0.7);} 60%{transform:scale(1.06);} 100%{transform:scale(1);}}
+  .email-copy{background:var(--lime-ink); color:var(--lime); border:none; padding:6px 11px; border-radius:8px; font-family:var(--ff-mono); font-size:0.7rem; cursor:pointer; text-transform:uppercase; flex-shrink:0;}
+  @media (max-width:600px){ .email-popup{white-space:normal; max-width:280px;} }
+
+  .talk-form-card{background:rgba(255,255,255,0.03); border:1px solid #2A2C22; border-radius:20px; padding:clamp(24px,4vw,34px);}
+  .field{margin-bottom:20px;}
+  .field label{display:block; color:var(--bg); font-family:var(--ff-body); font-weight:600; font-size:0.92rem; margin-bottom:10px;}
+  .field input, .field textarea{width:100%; background:rgba(255,255,255,0.04); border:1px solid #3A392F; border-radius:12px;
+    padding:14px 16px; color:var(--bg); font-family:var(--ff-body); font-size:0.92rem; outline:none; transition:border-color 0.3s, box-shadow 0.3s;}
+  .field input::placeholder, .field textarea::placeholder{color:#6E6C60;}
+  .field input:focus, .field textarea:focus{border-color:var(--lime); box-shadow:0 0 0 3px rgba(198,255,61,0.15);}
+  .field textarea{min-height:110px; resize:vertical;}
+  .submit-btn{width:100%; background:var(--lime); color:var(--lime-ink); border:none; border-radius:12px; padding:15px;
+    font-weight:700; font-family:var(--ff-mono); text-transform:uppercase; letter-spacing:0.04em; font-size:0.85rem; cursor:pointer; transition:transform 0.3s;}
+  .submit-btn:hover{transform:translateY(-2px);}
+  .form-note{margin-top:12px; font-size:0.78rem; color:#9A998F; text-align:center; min-height:16px;}
 
   /* modal */
   .modal-bg{position:fixed; inset:0; background:rgba(20,18,14,0.7); backdrop-filter:blur(4px); z-index:90; display:flex; align-items:center; justify-content:center;
@@ -259,6 +294,14 @@
   .modal-row:first-of-type{border-top:none;}
   .modal-row:hover{transform:translateX(4px);}
   .modal-row .mi{width:34px; height:34px; border-radius:9px; background:var(--bg); display:flex; align-items:center; justify-content:center;}
+  button.modal-row{background:none; border:none; width:100%; font-family:inherit; cursor:pointer;}
+  .modal-email-popup{
+    margin:2px 4px 0; background:var(--lime); color:var(--lime-ink); border-radius:12px;
+    display:flex; align-items:center; justify-content:space-between; gap:10px; font-family:var(--ff-mono); font-size:0.8rem; font-weight:600;
+    max-height:0; opacity:0; overflow:hidden; padding:0 16px; transition:max-height 0.4s cubic-bezier(.2,.8,.2,1), opacity 0.3s, padding 0.4s;
+  }
+  .modal-email-popup.show{max-height:60px; opacity:1; padding:12px 16px; animation:popBounce 0.45s cubic-bezier(.34,1.56,.64,1);}
+  .modal-email-copy{background:var(--lime-ink); color:var(--lime); border:none; padding:6px 11px; border-radius:8px; font-family:var(--ff-mono); font-size:0.68rem; cursor:pointer; text-transform:uppercase; flex-shrink:0;}
 
   /* footer */
   .mega-footer{position:relative; overflow:hidden; padding:70px 0 40px; background:var(--ink); color:#8E8D82;}
@@ -287,7 +330,6 @@
     <nav class="dnav" aria-label="Primary">
       <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="/blog/sales-and-social-media-marketing-one-job/">Blog</a>
     </nav>
-    <button class="nav-cta" id="navTalk">Let's Talk</button>
   </div>
   <div class="ticker">
     <div class="ticker-track">
@@ -303,7 +345,7 @@
     <div>
       <p class="hero-eyebrow"><span class="dot"></span>Available for new opportunities</p>
       <h1 class="hero-h">Abdullah Zeshan turns <span class="em">attention</span> into <span class="lime-mark">action</span>.</h1>
-      <p class="hero-sub">Sales and social media specialist helping brands turn attention into real, paying customers — closing deals directly with clients, and building the content, ad campaigns, and strategy that bring those clients in.</p>
+      <p class="hero-sub">Sales and social media specialist helping brands turn attention into real, paying customers, closing deals directly with clients, and building the content, ad campaigns, and strategy that bring those clients in.</p>
       <div class="hero-actions">
         <button class="btn btn-solid" id="heroTalk">Let's Talk →</button>
         <a href="#experience" class="btn btn-outline">See my experience</a>
@@ -336,7 +378,7 @@
         <div class="about-body">
           <p>Chasing that answer turned into testing hooks, studying what makes people <strong>comment instead of just double-tapping</strong>, and slowly turning "I think this works" into "I can prove this works."</p>
           <p style="margin-top:16px;">That habit paid off two ways. As a <strong>Sales Executive at Tech Cuber</strong>, I read what a client actually needed and closed the gap between "interested" and "signed." As a marketer for <strong>The Virtual Advertisers</strong> and <strong>The Virtual Academy</strong>, I did the same for entire brands.</p>
-          <p style="margin-top:16px;">The Computer Science background is the long game — I'm now pursuing a <strong>Generative AI diploma at NED Academy</strong>, because I want to stop asking a developer for a landing page and start being the person who builds it.</p>
+          <p style="margin-top:16px;">The Computer Science background is the long game. I'm now pursuing a <strong>Generative AI diploma at NED Academy</strong>, because I want to stop asking a developer for a landing page and start being the person who builds it.</p>
         </div>
       </div>
       <div class="fact-grid">
@@ -364,8 +406,8 @@
       <div class="case">
         <div class="case-num">01</div>
         <div class="case-main"><h3>Sales Executive<span class="case-arrow" aria-hidden="true">→</span></h3><div class="case-org">Tech Cuber · Karachi</div>
-          <div class="case-desc">Hunted down business opportunities and turned cold leads into real relationships — from "got a minute?" to signed deal.</div></div>
-        <div class="case-meta">Jun 2026 – Aug 2026<br><span class="case-badge">Current</span></div>
+          <div class="case-desc">Hunted down business opportunities and turned cold leads into real relationships, from "got a minute?" to signed deal.</div></div>
+        <div class="case-meta">Jun 2026 – Aug 2026</div>
       </div>
       <div class="case">
         <div class="case-num">02</div>
@@ -376,19 +418,19 @@
       <div class="case">
         <div class="case-num">03</div>
         <div class="case-main"><h3>Social Media Manager<span class="case-arrow" aria-hidden="true">→</span></h3><div class="case-org">The Virtual Academy International</div>
-          <div class="case-desc">Built the academy's online presence from the ground up — content that speaks to prospective students, not just their parents.</div></div>
+          <div class="case-desc">Built the academy's online presence from the ground up, content that speaks to prospective students, not just their parents.</div></div>
         <div class="case-meta">Jun 2024 – Jul 2026</div>
       </div>
       <div class="case">
         <div class="case-num">04</div>
         <div class="case-main"><h3>Social Media Marketing Manager<span class="case-arrow" aria-hidden="true">→</span></h3><div class="case-org">The Virtual Advertisers (TVA) · Karachi</div>
-          <div class="case-desc">Planned the strategy, wrote the copy, launched the ads, then dug into the numbers to see what landed — and did it better next time.</div></div>
+          <div class="case-desc">Planned the strategy, wrote the copy, launched the ads, then dug into the numbers to see what landed, and did it better next time.</div></div>
         <div class="case-meta">Oct 2024 – Jul 2026</div>
       </div>
       <div class="case">
         <div class="case-num">05</div>
         <div class="case-main"><h3>Social Media Manager<span class="case-arrow" aria-hidden="true">→</span></h3><div class="case-org">TVA Homeschooling Pakistan</div>
-          <div class="case-desc">Ran the entire digital presence for Pakistan's first structured homeschooling platform, solo — content, ads, visuals, copy, leads, and reporting.</div></div>
+          <div class="case-desc">Ran the entire digital presence for Pakistan's first structured homeschooling platform, solo: content, ads, visuals, copy, leads, and reporting.</div></div>
         <div class="case-meta">Sep 2024 – Jul 2026</div>
       </div>
       <div class="case">
@@ -414,8 +456,8 @@
     <div class="feat">
       <div class="feat-media"><span class="fm-tag">TVA / Homeschooling / 2024–2026</span></div>
       <div class="feat-body">
-        <h3 class="feat-title">TVA — The Virtual Academy: Pakistan's First Homeschooling Platform</h3>
-        <p class="feat-desc">Homeschooling is a hard sell to skeptical parents. My job was closing that trust gap — content and campaigns that made a screen feel like a real classroom, nationwide.</p>
+        <h3 class="feat-title">TVA: The Virtual Academy, Pakistan's First Homeschooling Platform</h3>
+        <p class="feat-desc">Homeschooling is a hard sell to skeptical parents. My job was closing that trust gap, content and campaigns that made a screen feel like a real classroom, nationwide.</p>
         <div class="feat-tags">
           <span class="feat-tag-chip">Content Strategy</span><span class="feat-tag-chip">Paid Campaigns</span><span class="feat-tag-chip">Community Building</span><span class="feat-tag-chip">Nationwide Rollout</span>
         </div>
@@ -429,7 +471,7 @@
     <span class="sec-label">04 / Education</span>
     <h2 class="sec-title">From matric to Generative AI.</h2>
     <div class="edu-list">
-      <div class="edu-row"><span class="edu-ghost" aria-hidden="true">'27</span><div class="edu-date">Aug 2026 – Aug 2027</div><div class="edu-school">NED University — Generative AI Diploma</div><div class="edu-note">Deep learning, NLP, and practical LLM applications, NED Academy.</div></div>
+      <div class="edu-row"><span class="edu-ghost" aria-hidden="true">'27</span><div class="edu-date">Aug 2026 – Aug 2027</div><div class="edu-school">NED University: Generative AI Diploma</div><div class="edu-note">Deep learning, NLP, and practical LLM applications, NED Academy.</div></div>
       <div class="edu-row"><span class="edu-ghost" aria-hidden="true">'26</span><div class="edu-date">Jan 2024 – Jun 2026</div><div class="edu-school">Gulshan Degree College</div><div class="edu-note">Intermediate, Computer Science · Grade A</div></div>
       <div class="edu-row"><span class="edu-ghost" aria-hidden="true">'24</span><div class="edu-date">Mar 2019 – Mar 2024</div><div class="edu-school">Usman Public School</div><div class="edu-note">Matriculation, Computer Science · Grade A</div></div>
     </div>
@@ -441,15 +483,38 @@
   <div class="wrap reveal">
     <span class="sec-label">05 / Contact</span>
     <h2 class="talk-h">Let's build <span class="lime-mark">something.</span></h2>
-    <p class="talk-sub">Have a project or need help? Reach out directly — I reply fast on WhatsApp and email both.</p>
-    <div class="talk-row">
-      <a href="mailto:abdullahzeshan532@gmail.com" class="talk-email">abdullahzeshan532@gmail.com</a>
-      <div class="talk-links">
-        <a href="https://wa.me/923112001268?text=Hi%20Abdullah%2C%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20talk." class="talk-icon" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38c1.45.79 3.08 1.21 4.76 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2z"/></svg></a>
-        <a href="https://www.linkedin.com/in/abdullah-zeshan-4706a02a3" class="talk-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.62 0 4.28 2.38 4.28 5.48v6.26zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
-        <a href="https://instagram.com/abdullah_zes" class="talk-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
-        <a href="https://www.facebook.com/profile.php?id=100082850493658" class="talk-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.5-3H13.5V8.5c0-.87.24-1.46 1.5-1.46H16.6V4.36C16.3 4.32 15.3 4.23 14.1 4.23c-2.4 0-4.05 1.47-4.05 4.15V10.5H7.5v3H10V21h3.5z"/></svg></a>
+    <p class="talk-sub">Have a project or need help? Fill out the form, or reach out directly, I reply fast on both.</p>
+
+    <div class="talk-grid">
+      <div>
+        <div class="contact-chips">
+          <span class="chip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+92 311 2001268</span>
+          <span class="chip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Karachi, Pakistan</span>
+        </div>
+
+        <div class="email-reveal-wrap">
+          <button type="button" class="email-btn" id="emailBtn">Email Me</button>
+          <div class="email-popup" id="emailPopup">
+            <span id="emailPopupText">Loading</span>
+            <button type="button" class="email-copy" id="emailCopyBtn">Copy</button>
+          </div>
+        </div>
+
+        <div class="talk-links" style="margin-top:26px;">
+          <a href="https://wa.me/923112001268?text=Hi%20Abdullah%2C%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20talk." class="talk-icon" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38c1.45.79 3.08 1.21 4.76 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2z"/></svg></a>
+          <a href="https://www.linkedin.com/in/abdullah-zeshan-4706a02a3" class="talk-icon" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.62 0 4.28 2.38 4.28 5.48v6.26zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+          <a href="https://instagram.com/abdullah_zes" class="talk-icon" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=100082850493658" class="talk-icon" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.5-3H13.5V8.5c0-.87.24-1.46 1.5-1.46H16.6V4.36C16.3 4.32 15.3 4.23 14.1 4.23c-2.4 0-4.05 1.47-4.05 4.15V10.5H7.5v3H10V21h3.5z"/></svg></a>
+        </div>
       </div>
+
+      <form class="talk-form-card" id="talkForm">
+        <div class="field"><label for="fname">Name</label><input type="text" id="fname" placeholder="Enter your name" required></div>
+        <div class="field"><label for="femail">Email</label><input type="email" id="femail" placeholder="Enter your email" required></div>
+        <div class="field"><label for="fproject">Your Project</label><textarea id="fproject" placeholder="Tell us about your project" required></textarea></div>
+        <button type="submit" class="submit-btn">Submit</button>
+        <div class="form-note" id="formNote"></div>
+      </form>
     </div>
   </div>
 </section>
@@ -481,8 +546,12 @@
     <h3 id="modalTitle">Let's connect</h3>
     <p class="modal-sub">Whichever's easier for you, I reply fast on both.</p>
     <a href="https://wa.me/923112001268?text=Hi%20Abdullah%2C%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20talk." class="modal-row"><span class="mi">💬</span>WhatsApp Me</a>
-    <a href="mailto:abdullahzeshan532@gmail.com" class="modal-row"><span class="mi">✉</span>Email Me</a>
-    <a href="https://www.linkedin.com/in/abdullah-zeshan-4706a02a3" class="modal-row"><span class="mi">in</span>View LinkedIn</a>
+    <button type="button" class="modal-row" id="modalEmailBtn"><span class="mi">✉</span>Email Me</button>
+    <div class="modal-email-popup" id="modalEmailPopup">
+      <span id="modalEmailText">Loading</span>
+      <button type="button" class="modal-email-copy" id="modalEmailCopy">Copy</button>
+    </div>
+    <a href="https://www.linkedin.com/in/abdullah-zeshan-4706a02a3" class="modal-row" target="_blank" rel="noopener"><span class="mi">in</span>View LinkedIn</a>
   </div>
 </div>
 
@@ -548,11 +617,62 @@
     if(lastFocused) lastFocused.focus();
   }
   document.getElementById('heroTalk').addEventListener('click', openModal);
-  document.getElementById('navTalk').addEventListener('click', openModal);
   document.getElementById('pillTalk').addEventListener('click', openModal);
   document.getElementById('modalClose').addEventListener('click', closeModal);
   modalBg.addEventListener('click', function(e){ if(e.target === modalBg) closeModal(); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  // contact form -> opens WhatsApp with the message pre-filled to Abdullah's number.
+  // Note: WhatsApp requires the visitor to tap Send themselves once it opens (no
+  // website can auto-send a WhatsApp message without the visitor's own action).
+  var talkForm = document.getElementById('talkForm');
+  var formNote = document.getElementById('formNote');
+  talkForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('fname').value.trim();
+    var email = document.getElementById('femail').value.trim();
+    var project = document.getElementById('fproject').value.trim();
+    var msg = 'Hi Abdullah, my name is ' + name + ' (' + email + '). ' + project;
+    var url = 'https://wa.me/923112001268?text=' + encodeURIComponent(msg);
+    window.open(url, '_blank', 'noopener');
+    formNote.textContent = 'Opening WhatsApp, just hit send there to reach me.';
+    formNote.style.color = '#9A998F';
+  });
+
+  // Cute email reveal: hides the address until clicked, then reveals it with a
+  // short bounce-in animation instead of showing it flat on the page.
+  var EMAIL = 'abdullahzeshan532@gmail.com';
+  function wireEmailReveal(btnId, popupId, textId, copyId){
+    var btn = document.getElementById(btnId);
+    var popup = document.getElementById(popupId);
+    var text = document.getElementById(textId);
+    var copyBtn = document.getElementById(copyId);
+    var revealed = false;
+    if(!btn) return;
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      if(!revealed){
+        text.textContent = 'Loading...';
+        popup.classList.add('show');
+        setTimeout(function(){ text.textContent = EMAIL; revealed = true; }, 650);
+      } else {
+        popup.classList.toggle('show');
+      }
+    });
+    copyBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      navigator.clipboard.writeText(EMAIL).then(function(){
+        var orig = copyBtn.textContent;
+        copyBtn.textContent = 'Copied!';
+        setTimeout(function(){ copyBtn.textContent = orig; }, 1500);
+      });
+    });
+    document.addEventListener('click', function(e){
+      if(!btn.contains(e.target) && !popup.contains(e.target)) popup.classList.remove('show');
+    });
+  }
+  wireEmailReveal('emailBtn', 'emailPopup', 'emailPopupText', 'emailCopyBtn');
+  wireEmailReveal('modalEmailBtn', 'modalEmailPopup', 'modalEmailText', 'modalEmailCopy');
 </script>
 
 </body>
