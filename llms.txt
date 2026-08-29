@@ -8,36 +8,39 @@ social strategy that bring those clients in. Currently pursuing a Generative
 AI diploma at NED Academy.
 
 ## Contact
-- Email: abdullahzeshan532@gmail.com
-- WhatsApp: +92 311 2001268
-- LinkedIn: https://www.linkedin.com/in/abdullah-zeshan-4706a02a3
-- Instagram: https://instagram.com/abdullah_zes
-- Facebook: https://www.facebook.com/profile.php?id=100082850493658
+- Email: [abdullahzeshan532@gmail.com](mailto:abdullahzeshan532@gmail.com)
+- WhatsApp: [+92 311 2001268](https://wa.me/923112001268)
+- LinkedIn: [abdullah-zeshan](https://www.linkedin.com/in/abdullah-zeshan-4706a02a3)
+- Instagram: [@abdullah_zes](https://instagram.com/abdullah_zes)
+- Facebook: [Abdullah Zeshan](https://www.facebook.com/profile.php?id=100082850493658)
 
-## Current role
-Sales Executive, Tech Cuber (Jun 2026 to present, Karachi)
+## Most recent role
+Sales Executive, Tech Cuber (Jun 2026 to Aug 2026, Karachi)
 
 ## Experience
-- Computer Science Teacher, The Scholars Academy (Sep 2025 to Jun 2026)
+- [Computer Science Teacher, The Scholars Academy](https://abdullah-zeshan.github.io/#experience) (Sep 2025 to Jun 2026)
 - Social Media Manager, The Virtual Academy International (Jun 2024 to Jul 2026)
 - Social Media Marketing Manager, The Virtual Advertisers / TVA (Oct 2024 to Jul 2026)
 - Social Media Manager, TVA Homeschooling Pakistan (Sep 2024 to Jul 2026)
 - Social Media Marketer (Internship), The Virtual Advertisers (Aug to Oct 2024)
 - Social Media Marketer (Internship), TVA International (Jul to Oct 2024)
 
+Full details: [abdullah-zeshan.github.io/#experience](https://abdullah-zeshan.github.io/#experience)
+
 ## Education
 - Undergraduate Diploma, Generative AI, NED University / NED Academy (2026 to 2027)
 - Intermediate, Computer Science, Grade A, Gulshan Degree College (2024 to 2026)
 - Matriculation, Computer Science, Grade A, Usman Public School (2019 to 2024)
 
+Full details: [abdullah-zeshan.github.io/#education](https://abdullah-zeshan.github.io/#education)
+
 ## Featured project
-TVA, The Virtual Academy: Pakistan's first structured homeschooling
-platform. Led content strategy, paid campaigns, and community building for
-its nationwide launch.
+[TVA, The Virtual Academy](https://abdullah-zeshan.github.io/#projects): Pakistan's first
+structured homeschooling platform. Led content strategy, paid campaigns, and
+community building for its nationwide launch.
 
 ## Blog
-- "Why Sales and Social Media Marketing Should Be One Job, Not Two"
-  https://abdullah-zeshan.github.io/blog/sales-and-social-media-marketing-one-job/
+- [Why Sales and Social Media Marketing Should Be One Job, Not Two](https://abdullah-zeshan.github.io/blog/sales-and-social-media-marketing-one-job/)
   On why keeping content and sales closely connected, instead of split
   across two disconnected teams, is what actually turns social media
   followers into paying customers.
@@ -46,3 +49,6 @@ its nationwide launch.
 Sales management, digital marketing, social media strategy, content
 marketing, copywriting, paid advertising (Facebook & Instagram Ads),
 performance optimization, LinkedIn outreach, brand strategy, data analysis.
+
+## Homepage
+[abdullah-zeshan.github.io](https://abdullah-zeshan.github.io/)

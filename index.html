@@ -36,15 +36,20 @@
   "url": "https://abdullah-zeshan.github.io/", "jobTitle": "Sales Executive & Social Media Marketer",
   "address": { "@type": "PostalAddress", "addressLocality": "Karachi", "addressCountry": "PK" },
   "email": "mailto:abdullahzeshan532@gmail.com",
+  "telephone": "+923112001268",
   "sameAs": ["https://www.linkedin.com/in/abdullah-zeshan-4706a02a3", "https://instagram.com/abdullah_zes", "https://www.facebook.com/profile.php?id=100082850493658"]
 }
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&display=optional">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</noscript>
 
 <style>
   :root{
@@ -130,7 +135,12 @@
   @keyframes cardFloatB{0%,100%{transform:translate(0,0);} 50%{transform:translate(-8px,10px);}}
   @keyframes cardFloatC{0%,100%{transform:translate(0,0);} 50%{transform:translate(5px,-9px);}}
   .hv-label{font-family:var(--ff-mono); font-size:0.75rem; color:var(--muted); display:flex; align-items:center; gap:7px;}
-  .hv-dot{width:7px; height:7px; border-radius:50%;}
+  .hv-dot{width:7px; height:7px; border-radius:50%; display:inline-block;}
+  .hv-dot-green{background:#3FAE4E;}
+  .hv-dot-lime{background:var(--lime); box-shadow:0 0 0 3px rgba(198,255,61,0.3);}
+  .hv-label-spaced{margin-top:6px;}
+  .about-body p + p{margin-top:16px;}
+  .talk-links-spaced{margin-top:26px;}
   .hv-title{margin-top:8px; font-weight:700; font-size:1rem; line-height:1.4;}
   .hv-stat{font-family:var(--ff-display); font-weight:700; font-size:2rem; background:linear-gradient(100deg,var(--lime-dark),var(--ink) 75%); -webkit-background-clip:text; background-clip:text; color:transparent;}
   .hero-eyebrow{font-family:var(--ff-mono); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); display:flex; align-items:center; gap:8px; margin-bottom:28px;}
@@ -367,15 +377,15 @@
     </div>
     <div class="hero-visual" aria-hidden="true">
       <div class="hv-card hv1">
-        <div class="hv-label"><span class="hv-dot" style="background:#3FAE4E;"></span>New lead</div>
+        <div class="hv-label"><span class="hv-dot hv-dot-green"></span>New lead</div>
         <div class="hv-title">Warm intro from LinkedIn outreach</div>
       </div>
       <div class="hv-card hv2">
         <div class="hv-stat">+42%</div>
-        <div class="hv-label" style="margin-top:6px;">Engagement growth this quarter</div>
+        <div class="hv-label hv-label-spaced">Engagement growth this quarter</div>
       </div>
       <div class="hv-card hv3">
-        <div class="hv-label"><span class="hv-dot" style="background:var(--lime); box-shadow:0 0 0 3px rgba(198,255,61,0.3);"></span>Campaign live</div>
+        <div class="hv-label"><span class="hv-dot hv-dot-lime"></span>Campaign live</div>
         <div class="hv-title">Ad set performing above target</div>
       </div>
     </div>
@@ -391,8 +401,9 @@
         <p class="about-lead">Why do some posts stop the scroll and most don't? That question became a habit.</p>
         <div class="about-body">
           <p>Chasing that answer turned into testing hooks, studying what makes people <strong>comment instead of just double-tapping</strong>, and slowly turning "I think this works" into "I can prove this works."</p>
-          <p style="margin-top:16px;">That habit paid off two ways. As a <strong>Sales Executive at Tech Cuber</strong>, I read what a client actually needed and closed the gap between "interested" and "signed." As a marketer for <strong>The Virtual Advertisers</strong> and <strong>The Virtual Academy</strong>, I did the same for entire brands.</p>
-          <p style="margin-top:16px;">The Computer Science background is the long game. I'm now pursuing a <strong>Generative AI diploma at NED Academy</strong>, because I want to stop asking a developer for a landing page and start being the person who builds it.</p>
+          <p>That habit paid off two ways. As a <strong>Sales Executive at Tech Cuber</strong>, I read what a client actually needed and closed the gap between "interested" and "signed." As a marketer for <strong>The Virtual Advertisers</strong> and <strong>The Virtual Academy</strong>, I did the same for entire brands.</p>
+          <p>The Computer Science background is the long game. I'm now pursuing a <strong>Generative AI diploma at NED Academy</strong>, because I want to stop asking a developer for a landing page and start being the person who builds it.</p>
+        <p>Day to day, that means splitting my time between actual sales conversations and the content that leads into them, treating both as one connected job instead of two separate ones. If you're curious why I think that split hurts most brands, I wrote a longer breakdown of it on the blog.</p>
         </div>
       </div>
       <div class="fact-grid">
@@ -485,9 +496,9 @@
     <span class="sec-label">04 / Education</span>
     <h2 class="sec-title">From matric to Generative AI.</h2>
     <div class="edu-list">
-      <div class="edu-row"><span class="edu-ghost" aria-hidden="true">'27</span><div class="edu-date">Aug 2026 – Aug 2027</div><div class="edu-school">NED University: Generative AI Diploma</div><div class="edu-note">Deep learning, NLP, and practical LLM applications, NED Academy.</div></div>
-      <div class="edu-row"><span class="edu-ghost" aria-hidden="true">'26</span><div class="edu-date">Jan 2024 – Jun 2026</div><div class="edu-school">Gulshan Degree College</div><div class="edu-note">Intermediate, Computer Science · Grade A</div></div>
-      <div class="edu-row"><span class="edu-ghost" aria-hidden="true">'24</span><div class="edu-date">Mar 2019 – Mar 2024</div><div class="edu-school">Usman Public School</div><div class="edu-note">Matriculation, Computer Science · Grade A</div></div>
+      <div class="edu-row"><span class="edu-ghost" aria-hidden="true">'27</span><div class="edu-date">Aug 2026 – Aug 2027</div><h3 class="edu-school">NED University: Generative AI Diploma</h3><div class="edu-note">Deep learning, NLP, and practical LLM applications, NED Academy.</div></div>
+      <div class="edu-row"><span class="edu-ghost" aria-hidden="true">'26</span><div class="edu-date">Jan 2024 – Jun 2026</div><h3 class="edu-school">Gulshan Degree College</h3><div class="edu-note">Intermediate, Computer Science · Grade A</div></div>
+      <div class="edu-row"><span class="edu-ghost" aria-hidden="true">'24</span><div class="edu-date">Mar 2019 – Mar 2024</div><h3 class="edu-school">Usman Public School</h3><div class="edu-note">Matriculation, Computer Science · Grade A</div></div>
     </div>
   </div>
 </section>
@@ -514,7 +525,7 @@
           </div>
         </div>
 
-        <div class="talk-links" style="margin-top:26px;">
+        <div class="talk-links talk-links-spaced">
           <a href="https://wa.me/923112001268?text=Hi%20Abdullah%2C%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20talk." class="talk-icon" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38c1.45.79 3.08 1.21 4.76 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2z"/></svg></a>
           <a href="https://www.linkedin.com/in/abdullah-zeshan-4706a02a3" class="talk-icon" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.62 0 4.28 2.38 4.28 5.48v6.26zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
           <a href="https://instagram.com/abdullah_zes" class="talk-icon" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
