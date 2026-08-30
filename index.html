@@ -124,14 +124,14 @@
   .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:40px; align-items:center;}
   @media (max-width:960px){ .hero-grid{grid-template-columns:1fr;} }
   .hero-visual{position:relative; height:380px;}
-  @media (max-width:960px){ .hero-visual{height:auto; margin-top:36px; display:flex; flex-direction:column; gap:16px;} }
+  @media (max-width:960px){ .hero-visual{height:auto; min-height:360px; margin-top:36px; display:flex; flex-direction:column; gap:16px;} }
   .hv-card{
     background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:20px 22px;
     box-shadow:0 20px 44px -22px rgba(20,18,14,0.22); position:absolute;
-    transition:transform 0.3s, box-shadow 0.3s;
+    transition:transform 0.3s, box-shadow 0.3s; contain:layout;
   }
   .hv-card:hover{transform:translateY(-8px) !important; box-shadow:0 26px 50px -20px rgba(20,18,14,0.3); animation-play-state:paused;}
-  @media (max-width:960px){ .hv-card{position:static; width:100% !important;} }
+  @media (max-width:960px){ .hv-card{position:static; width:100% !important; min-height:104px;} }
   .hv1{width:250px; top:0; left:0; animation:cardFloatA 7s ease-in-out infinite;}
   .hv2{width:200px; top:38%; right:-10px; animation:cardFloatB 8s ease-in-out infinite; animation-delay:0.8s;}
   .hv3{width:250px; bottom:0; left:0; animation:cardFloatC 7.5s ease-in-out infinite; animation-delay:1.6s;}
@@ -584,14 +584,33 @@
 </div>
 
 <script>
-  window.addEventListener('load', function(){
-    var s = document.createElement('script');
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RPDXLL7HPY'; s.async = true;
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-RPDXLL7HPY');
-  });
+  (function(){
+    var gaLoaded = false;
+    function loadGA(){
+      if(gaLoaded) return; gaLoaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RPDXLL7HPY'; s.async = true;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date()); gtag('config', 'G-RPDXLL7HPY');
+      ['pointerdown','keydown','touchstart','scroll'].forEach(function(evt){
+        window.removeEventListener(evt, loadGA, {passive:true});
+      });
+    }
+    ['pointerdown','keydown','touchstart','scroll'].forEach(function(evt){
+      window.addEventListener(evt, loadGA, {passive:true, once:true});
+    });
+    // fallback: load anyway after 5s idle if the visitor never interacts
+    window.addEventListener('load', function(){
+      if('requestIdleCallback' in window){
+        requestIdleCallback(function(){ setTimeout(loadGA, 5000); }, {timeout: 8000});
+      } else {
+        setTimeout(loadGA, 5000);
+      }
+    });
+  })();
 </script>
 <script>
   // custom cursor
