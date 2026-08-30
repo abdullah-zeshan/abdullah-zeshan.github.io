@@ -237,14 +237,32 @@
 </footer>
 
 <script>
-  window.addEventListener('load', function(){
-    var s = document.createElement('script');
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RPDXLL7HPY'; s.async = true;
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-RPDXLL7HPY');
-  });
+  (function(){
+    var gaLoaded = false;
+    function loadGA(){
+      if(gaLoaded) return; gaLoaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RPDXLL7HPY'; s.async = true;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date()); gtag('config', 'G-RPDXLL7HPY');
+      ['pointerdown','keydown','touchstart','scroll'].forEach(function(evt){
+        window.removeEventListener(evt, loadGA, {passive:true});
+      });
+    }
+    ['pointerdown','keydown','touchstart','scroll'].forEach(function(evt){
+      window.addEventListener(evt, loadGA, {passive:true, once:true});
+    });
+    window.addEventListener('load', function(){
+      if('requestIdleCallback' in window){
+        requestIdleCallback(function(){ setTimeout(loadGA, 5000); }, {timeout: 8000});
+      } else {
+        setTimeout(loadGA, 5000);
+      }
+    });
+  })();
 </script>
 
 </body>
