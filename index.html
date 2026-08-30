@@ -40,15 +40,19 @@
   "sameAs": ["https://www.linkedin.com/in/abdullah-zeshan-4706a02a3", "https://instagram.com/abdullah_zes", "https://www.facebook.com/profile.php?id=100082850493658"]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org", "@type": "WebSite",
+  "name": "Abdullah Zeshan", "url": "https://abdullah-zeshan.github.io/"
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&display=optional">
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
 </noscript>
 
 <style>
@@ -564,7 +568,7 @@
   <a href="https://www.linkedin.com/in/abdullah-zeshan-4706a02a3" class="pill-btn" target="_blank" rel="noopener">LinkedIn</a>
 </div>
 
-<div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+<div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalTitle" inert>
   <div class="modal-box">
     <button class="modal-close" id="modalClose" aria-label="Close dialog">✕</button>
     <h3 id="modalTitle">Let's connect</h3>
@@ -632,12 +636,12 @@
     if(e) e.preventDefault();
     lastFocused = document.activeElement;
     modalBg.classList.add('open');
-    modalBg.setAttribute('aria-hidden', 'false');
+    modalBg.removeAttribute('inert');
     document.getElementById('modalClose').focus();
   }
   function closeModal(){
     modalBg.classList.remove('open');
-    modalBg.setAttribute('aria-hidden', 'true');
+    modalBg.setAttribute('inert', '');
     if(lastFocused) lastFocused.focus();
   }
   document.getElementById('heroTalk').addEventListener('click', openModal);
