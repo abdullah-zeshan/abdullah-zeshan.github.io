@@ -108,6 +108,12 @@
     padding:8px 15px; border-radius:999px; text-decoration:none; transition:all 0.3s;}
   .blog-pill-dark svg{width:13px; height:13px; color:var(--lime); flex-shrink:0;}
   .blog-pill-dark:hover{border-color:var(--lime); color:#fff;}
+  .blog-pill-icon{display:none; align-items:center; justify-content:center; background:none; border:1px solid var(--line); color:var(--ink);
+    width:38px; height:38px; border-radius:50%; cursor:pointer; flex-shrink:0;}
+  .blog-pill-icon svg{width:16px; height:16px; color:var(--lime-dark);}
+  .blog-pill-icon:hover{border-color:var(--ink); background:var(--ink);}
+  .blog-pill-icon:hover svg{color:var(--lime);}
+  @media (max-width:760px){ .blog-pill-icon{display:inline-flex;} }
 
   /* marquee ticker */
   .ticker{background:var(--ink); color:var(--lime); padding:12px 0; overflow:hidden; white-space:nowrap;}
@@ -420,6 +426,7 @@
     <nav class="dnav" aria-label="Primary">
       <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#certificates">Certificates</a><a href="#projects">Projects</a><button type="button" id="openBlogPalette" class="blog-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Blog</button>
     </nav>
+    <button type="button" id="openBlogPaletteMobile" class="blog-pill-icon" aria-label="Search blog posts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></button>
   </div>
   <div class="ticker">
     <div class="ticker-track">
@@ -863,6 +870,8 @@
     if(bpLastFocused) bpLastFocused.focus();
   }
   document.getElementById('openBlogPalette').addEventListener('click', openBlogPalette);
+  var bpMobileBtn = document.getElementById('openBlogPaletteMobile');
+  if(bpMobileBtn) bpMobileBtn.addEventListener('click', openBlogPalette);
   var bpFooterBtn = document.getElementById('openBlogPaletteFooter');
   if(bpFooterBtn) bpFooterBtn.addEventListener('click', openBlogPalette);
   bpBg.addEventListener('click', function(e){ if(e.target === bpBg) closeBlogPalette(); });
